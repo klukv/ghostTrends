@@ -5,28 +5,9 @@ import { Link } from "react-router-dom";
 import { DATABASE_TRACKS_ROUTE, LIKED_TRACKS_ROUTE } from "../const/routes";
 import { Container } from "../const/global";
 
-const HeaderInner = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 10px 0px;
-`;
-
-const Logo = styled.div`
-  font-size: 14px;
-  color: red;
-`;
-
-const Navigation = styled.nav`
-  margin-left: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 300px;
-`;
-
 export const Header = () => {
   return (
-    <header className="header">
+    <HeaderC className="header">
       <Container>
         <HeaderInner>
           <Logo>Ghost Trends</Logo>
@@ -40,8 +21,32 @@ export const Header = () => {
           </Navigation>
         </HeaderInner>
       </Container>
-    </header>
+    </HeaderC>
   );
 };
 
 export default Header;
+
+const HeaderC = styled.header`
+  background-color:  #000d1a;
+  font-size: 16px;
+`
+
+const HeaderInner = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+`;
+
+const Logo = styled.div`
+  font-size: 14px;
+  color: red;
+`;
+
+const Navigation = styled.nav`
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+`;

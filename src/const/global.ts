@@ -10,6 +10,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 14px;
     background-color: #f0f8ff;
     font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+  }
+  a{
+    color: #ffffff;
+    text-decoration: none;
   }
 `;
 
