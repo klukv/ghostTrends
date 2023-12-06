@@ -2,15 +2,18 @@
 
 export interface IAbstractButton {
     fontSize?: string;
+    padding: string;
+    fontWeight: number;
+    backgroundColor: string;
 }
 
-export interface IButtonBorder extends IAbstractButton {
-    border: string;
+export interface IButtonBorder {
+    fontSize?: string;//???
+    border?: string;
 }
 
 export interface IButtonBackground extends IAbstractButton {
     backgroundColor: string;
-    fontWeight: number;
 }
 
 export interface IButtonLike extends IAbstractButton {

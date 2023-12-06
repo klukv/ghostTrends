@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { IBlockTrack, IButtonBorder, ITrackData } from "../const/types";
+import { IBlockTrack, ITrackData } from "../const/types";
 import ButtonLike from "./buttons/ButtonLike";
 import ButtonBorder from "./buttons/ButtonBorder";
 import ButtonBackground from "./buttons/ButtonBackground";
@@ -25,9 +25,9 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
       <PriceStyle>{props.dataTrack.price} {props.dataTrack.currency} On sale</PriceStyle>
       <ContentTrackStyle>
         <AuthorTrack>
-          <ButtonBorder border="#4f6f8a">{props.dataTrack.name}</ButtonBorder>
+          <ButtonBorder>{props.dataTrack.name}</ButtonBorder>
           <SpanBlock marginValue="mx">by</SpanBlock>
-          <ButtonBorder border="#4f6f8a">{props.dataTrack.artist}</ButtonBorder>
+          <ButtonBorder>{props.dataTrack.artist}</ButtonBorder>
         </AuthorTrack>
         <InfoTrackStyle>
           <AvatarTimeStyle>
@@ -60,11 +60,11 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
               </InfoBitGenresStyle>
               <PublishersLabelStyle>
                 <SpanBlock marginValue="right">Label:</SpanBlock> 
-                <ButtonBorder border="#4f6f8a">{props.dataTrack.label}</ButtonBorder>
+                <ButtonBorder>{props.dataTrack.label}</ButtonBorder>
               </PublishersLabelStyle>
               <PublishersPLatformStyle>
                 <SpanBlock marginValue="right">Platform:</SpanBlock> 
-                <ButtonBorder border="#4f6f8a">{props.dataTrack.platform}</ButtonBorder>
+                <ButtonBorder>{props.dataTrack.platform}</ButtonBorder>
               </PublishersPLatformStyle>
             </InfoBitStyle>
           </InfoTrackStyle>
