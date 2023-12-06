@@ -5,6 +5,7 @@ import ButtonLike from "./buttons/ButtonLike";
 import ButtonBorder from "./buttons/ButtonBorder";
 import ButtonBackground from "./buttons/ButtonBackground";
 import { SpanBlock } from "../const/global";
+import { AuthorTrack, AvatarBlockStyle, AvatarTimeStyle, BitPropertiesBpmStyle, BitPropertiesDawStyle, BitPropertiesKeyStyle, ContentTrackStyle, ImageAvatar, InfoBitGenresStyle, InfoBitStyle, InfoTimeStyle, InfoTrackStyle, PriceStyle, PublishersLabelStyle, PublishersPLatformStyle } from "../styles/blockTrackStyle";
 
 interface IPropsBlockTracks {
   displayValue: string;
@@ -25,34 +26,36 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
         <InfoTrackStyle>
           <AvatarTimeStyle>
             <AvatarBlockStyle>
-              <ImageAvatar />
+              <ImageAvatar src="https://avatars.mds.yandex.net/get-pdb/2797093/7f679526-0905-46e3-a11c-028489d4eb91/s1200" alt="niceImage"/>
             </AvatarBlockStyle>
             <InfoTimeStyle>03:11</InfoTimeStyle>
           </AvatarTimeStyle>
-          <InfoBitStyle>
-            <BitPropertiesBpmStyle>
-              <SpanBlock marginValue="right">BPM:</SpanBlock>
-              <ButtonBackground></ButtonBackground>
-            </BitPropertiesBpmStyle>
-            <BitPropertiesKeyStyle>
-            <SpanBlock marginValue="right">Key:</SpanBlock> <ButtonBackground></ButtonBackground>
-            </BitPropertiesKeyStyle>
-            <BitPropertiesDawStyle>
-            <SpanBlock marginValue="right">DAW:</SpanBlock> <ButtonBackground></ButtonBackground>
-            </BitPropertiesDawStyle>
-            <InfoBitGenresStyle>
-              Genres: <ButtonBackground></ButtonBackground>
-            </InfoBitGenresStyle>
-            <PublishersLabelStyle>
-              Label: <ButtonBorder>Future CLassic</ButtonBorder>
-            </PublishersLabelStyle>
-            <PublishersPLatformStyle>
-              Platform: <ButtonBorder>Tracks For Aslanbeks</ButtonBorder>
-            </PublishersPLatformStyle>
-          </InfoBitStyle>
-        </InfoTrackStyle>
-      </ContentTrackStyle>
-      <ButtonLike />
+            <InfoBitStyle>
+              <BitPropertiesBpmStyle>
+                <SpanBlock marginValue="right">BPM:</SpanBlock>
+                <ButtonBackground></ButtonBackground>
+              </BitPropertiesBpmStyle>
+              <BitPropertiesKeyStyle>
+                <SpanBlock marginValue="right">Key:</SpanBlock> <ButtonBackground></ButtonBackground>
+              </BitPropertiesKeyStyle>
+              <BitPropertiesDawStyle>
+                <SpanBlock marginValue="right">DAW:</SpanBlock> 
+                <ButtonBackground></ButtonBackground>
+              </BitPropertiesDawStyle>
+              <InfoBitGenresStyle>
+                <SpanBlock marginValue="right">Genres:</SpanBlock> <ButtonBackground></ButtonBackground>
+              </InfoBitGenresStyle>
+              <PublishersLabelStyle>
+                <SpanBlock marginValue="right">Label:</SpanBlock> 
+                <ButtonBorder>Future CLassic</ButtonBorder>
+              </PublishersLabelStyle>
+              <PublishersPLatformStyle>
+                <SpanBlock marginValue="right">Platform:</SpanBlock> <ButtonBorder>Tracks For Aslanbeks</ButtonBorder>
+              </PublishersPLatformStyle>
+            </InfoBitStyle>
+          </InfoTrackStyle>
+        </ContentTrackStyle>
+        <ButtonLike />
     </BlockTrackStyle>
   );
 };
@@ -73,86 +76,4 @@ const BlockTrackStyle = styled.div<IBlockTrack>`
     #f0f8ff,
     ${(props) => props.backgroundColor}
   );
-`;
-
-const ContentTrackStyle = styled.div`
-  flex-grow: 1;
-  margin: 0px 15px;
-  display: flex;
-  flex-direction: column;
-`;
-
-const PriceStyle = styled.div`
-  font-weight: 700;
-  font-size: 18px;
-  max-width: 80px;
-  text-align: center;
-`;
-
-const AuthorTrack = styled.div`
-  display: flex;
-  margin-bottom: 20px;
-`;
-
-const InfoTrackStyle = styled.div`
-  display: flex;
-`;
-
-const AvatarTimeStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const AvatarBlockStyle = styled.div`
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-  border-radius: 10px;
-`;
-
-const ImageAvatar = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-ImageAvatar.defaultProps = {
-  src: "https://avatars.mds.yandex.net/get-pdb/2797093/7f679526-0905-46e3-a11c-028489d4eb91/s1200",
-  alt: "niceImage",
-};
-
-const InfoTimeStyle = styled.div`
-  margin-top: 7px;
-  font-weight: 700;
-`;
-
-const InfoBitStyle = styled.div`
-  display: grid;
-  grid-template-rows: repeat(3, 50px);
-  grid-template-columns: repeat(3, 200px);
-  gap: 15px;
-  margin: 0px 25px;
-`;
-
-const BitPropertiesBpmStyle = styled.div`
-  display: flex;
-`;
-
-const BitPropertiesKeyStyle = styled.div`
-  display: flex
-`;
-
-const BitPropertiesDawStyle = styled.div`
-  display: flex;
-`;
-
-const InfoBitGenresStyle = styled.div`
-  display: flex;
-  grid-column: span 3;
-`;
-
-const PublishersLabelStyle = styled.div`
-  display: flex;
-`;
-
-const PublishersPLatformStyle = styled.div`
-  display: flex;
 `;
