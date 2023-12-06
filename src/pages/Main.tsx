@@ -13,6 +13,7 @@ function Main() {
             key={trackInfo.id}
             displayValue="flex"
             backgroundColorValue={index % 2 !== 0 ? "#f5e1ea" : "#e1ebf5"}
+            dataTrack={trackInfo}
           />
         ))}
       </Container>

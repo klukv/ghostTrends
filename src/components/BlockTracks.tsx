@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { IBlockTrack } from "../const/types";
+import { IBlockTrack, IButtonBorder, ITrackData } from "../const/types";
 import ButtonLike from "./buttons/ButtonLike";
 import ButtonBorder from "./buttons/ButtonBorder";
 import ButtonBackground from "./buttons/ButtonBackground";
@@ -10,47 +10,61 @@ import { AuthorTrack, AvatarBlockStyle, AvatarTimeStyle, BitPropertiesBpmStyle, 
 interface IPropsBlockTracks {
   displayValue: string;
   backgroundColorValue: string;
+
+  dataTrack: ITrackData
 }
 
 const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
+
   return (
     <BlockTrackStyle
       display={props.displayValue}
       backgroundColor={props.backgroundColorValue}
     >
-      <PriceStyle>199 USD On sale</PriceStyle>
+      {/* Todo: сделать другой шрифт */}
+      <PriceStyle>{props.dataTrack.price} {props.dataTrack.currency} On sale</PriceStyle>
       <ContentTrackStyle>
         <AuthorTrack>
-          <ButtonBorder>Bruh</ButtonBorder>by<ButtonBorder>Cringe</ButtonBorder>
+          <ButtonBorder border="#4f6f8a">{props.dataTrack.name}</ButtonBorder>
+          <SpanBlock marginValue="mx">by</SpanBlock>
+          <ButtonBorder border="#4f6f8a">{props.dataTrack.artist}</ButtonBorder>
         </AuthorTrack>
         <InfoTrackStyle>
           <AvatarTimeStyle>
             <AvatarBlockStyle>
-              <ImageAvatar src="https://avatars.mds.yandex.net/get-pdb/2797093/7f679526-0905-46e3-a11c-028489d4eb91/s1200" alt="niceImage"/>
+              <ImageAvatar src={props.dataTrack.coverImage} alt="niceImage"/>
             </AvatarBlockStyle>
             <InfoTimeStyle>03:11</InfoTimeStyle>
           </AvatarTimeStyle>
             <InfoBitStyle>
               <BitPropertiesBpmStyle>
                 <SpanBlock marginValue="right">BPM:</SpanBlock>
-                <ButtonBackground></ButtonBackground>
+                <ButtonBackground>{props.dataTrack.bpm}</ButtonBackground>
               </BitPropertiesBpmStyle>
               <BitPropertiesKeyStyle>
-                <SpanBlock marginValue="right">Key:</SpanBlock> <ButtonBackground></ButtonBackground>
+                <SpanBlock marginValue="right">Key:</SpanBlock> 
+                <ButtonBackground>{props.dataTrack.key_}</ButtonBackground>
               </BitPropertiesKeyStyle>
               <BitPropertiesDawStyle>
                 <SpanBlock marginValue="right">DAW:</SpanBlock> 
-                <ButtonBackground></ButtonBackground>
+                <ButtonBackground>{props.dataTrack.daw}</ButtonBackground>
               </BitPropertiesDawStyle>
               <InfoBitGenresStyle>
-                <SpanBlock marginValue="right">Genres:</SpanBlock> <ButtonBackground></ButtonBackground>
+                <SpanBlock marginValue="right">Genres:</SpanBlock>
+                {/* ключ по индексу bruh... */}
+                {props.dataTrack.genres.map((genre, index) => (
+                  <ButtonBackground key={index}>
+                    {genre}
+                  </ButtonBackground>
+                ))}
               </InfoBitGenresStyle>
               <PublishersLabelStyle>
                 <SpanBlock marginValue="right">Label:</SpanBlock> 
-                <ButtonBorder>Future CLassic</ButtonBorder>
+                <ButtonBorder border="#4f6f8a">{props.dataTrack.label}</ButtonBorder>
               </PublishersLabelStyle>
               <PublishersPLatformStyle>
-                <SpanBlock marginValue="right">Platform:</SpanBlock> <ButtonBorder>Tracks For Aslanbeks</ButtonBorder>
+                <SpanBlock marginValue="right">Platform:</SpanBlock> 
+                <ButtonBorder border="#4f6f8a">{props.dataTrack.platform}</ButtonBorder>
               </PublishersPLatformStyle>
             </InfoBitStyle>
           </InfoTrackStyle>
@@ -66,7 +80,7 @@ const BlockTrackStyle = styled.div<IBlockTrack>`
   justify-content: space-between;
   align-items: center;
   color: #000;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
 

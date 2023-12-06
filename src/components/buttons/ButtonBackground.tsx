@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-function ButtonBackground() {
+interface IChildren {
+  children: ReactNode;
+}
+
+const ButtonBackground: React.FC<IChildren> = ({children}) => {
   return (
-    <div>ButtonBackground</div>
+    <div>{children}</div>
   )
 }
 

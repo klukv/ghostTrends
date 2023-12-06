@@ -17,6 +17,16 @@ export const GlobalStyle = createGlobalStyle`
     color: #ffffff;
     text-decoration: none;
   }
+  button{
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    /* отображаем курсор в виде руки при наведении; некоторые
+    считают, что необходимо оставлять стрелочный вид для кнопок */
+    cursor: pointer;
+  }
 `;
 
 export const Container = styled.div`
@@ -28,5 +38,7 @@ export const Container = styled.div`
 export const SpanBlock = styled.div<ISpanBlock>`
   display: inline-block;
 
-  margin: ${(props) => props.marginValue === "left" ? "0px 0px 0px 8px" : "0px 8px 0px 0px"}
-`
+  // значение margin  в зависимости от пропса
+  ${(props) => props.marginValue === "right" && "margin: 0px 8px 0px 0px"}
+  ${(props) => props.marginValue === "mx" && "margin: 0px 5px 0px 5px"}
+`;

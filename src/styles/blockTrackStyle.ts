@@ -16,7 +16,8 @@ export const PriceStyle = styled.div`
 
 export const AuthorTrack = styled.div`
   display: flex;
-  margin-bottom: 20px;
+  align-items: center;
+  margin: 10px 0px 20px 0px;
 `;
 
 export const InfoTrackStyle = styled.div`
@@ -47,7 +48,7 @@ export const InfoTimeStyle = styled.div`
 
 export const InfoBitStyle = styled.div`
   display: grid;
-  grid-template-rows: repeat(3, 50px);
+  grid-template-rows: repeat(3, 30px);
   grid-template-columns: repeat(3, 200px);
   gap: 15px;
   margin: 0px 25px;

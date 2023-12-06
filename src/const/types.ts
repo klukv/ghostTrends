@@ -1,11 +1,7 @@
-import { variantsButton } from "./enums";
-
 // Buttons types
 
 export interface IAbstractButton {
-    fontSize: string;
-    isHover: boolean;
-    typeButton: variantsButton
+    fontSize?: string;
 }
 
 export interface IButtonBorder extends IAbstractButton {
