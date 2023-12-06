@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { PropsWithChildren, ReactNode } from "react";
 
-function ButtonBorder() {
-  return (
-    <div>ButtonBorder</div>
-  )
+interface IChildren {
+  children: ReactNode;
 }
 
-export default ButtonBorder
+const ButtonBorder: React.FC<PropsWithChildren<IChildren>> = ({ children }) => {
+  return <div>{children}</div>;
+};
+
+export default ButtonBorder;

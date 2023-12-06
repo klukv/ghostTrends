@@ -1,0 +1,5 @@
+export enum variantsButton {
+    BUTTON_BORDERED = 'BUTTON_BORDERED',
+    BUTTON_LIKE = 'BUTTON_LIKE',
+    BUTTON_BACKGROUND = 'BUTTON_BACKGROUND'
+}

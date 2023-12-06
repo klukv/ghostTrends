@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { DATABASE_TRACKS_ROUTE, LIKED_TRACKS_ROUTE } from "../const/routes";
 import { Container } from "../const/global";
 
-export const Header = () => {
+const Header = () => {
   return (
     <HeaderC className="header">
       <Container>

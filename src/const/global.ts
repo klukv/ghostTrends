@@ -1,4 +1,5 @@
-import styled, { createGlobalStyle, css } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import { ISpanBlock } from "./types";
 
 export const GlobalStyle = createGlobalStyle`
   *, *::after, *::before {
@@ -7,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0;
 }
   body{
-    font-size: 14px;
+    font-size: 16px;
     background-color: #f0f8ff;
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
@@ -19,7 +20,13 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-  max-width: 800px;
+  max-width: 950px;
   margin: 0 auto;
   padding: 0px 15px;
 `;
+
+export const SpanBlock = styled.div<ISpanBlock>`
+  display: inline-block;
+
+  margin: ${(props) => props.marginValue === "left" ? "0px 0px 0px 8px" : "0px 8px 0px 0px"}
+`
