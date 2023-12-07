@@ -1,10 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
+import { IAbstractButton } from '../../const/types'
 
-interface IChildren {
-  children: ReactNode;
-}
-
-const ButtonBackground: React.FC<IChildren> = ({children}) => {
+const ButtonBackground: React.FC<any> = ({children}) => {
   return (
     <div>{children}</div>
   )

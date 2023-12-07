@@ -1,23 +1,21 @@
+import { ReactNode } from "react";
+
 // Buttons types
 
 export interface IAbstractButton {
     fontSize?: string;
-    padding: string;
-    fontWeight: number;
-    backgroundColor: string;
+    padding?: string;
+    fontWeight?: boolean;
+    isBorder?: boolean;
+    borderSize?: string;
+    borderColor?: string;
+    borderRadius?: string;
+    isBackground?: boolean;
+    backgroundColor?: string;
 }
 
-export interface IButtonBorder {
-    fontSize?: string;//???
-    border?: string;
-}
-
-export interface IButtonBackground extends IAbstractButton {
-    backgroundColor: string;
-}
-
-export interface IButtonLike extends IAbstractButton {
-    isCLick: boolean;
+export interface IPropsWithChildren extends IAbstractButton {
+    children: ReactNode;
 }
 
 //BLockTrack types
