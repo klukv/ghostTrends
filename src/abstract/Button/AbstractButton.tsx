@@ -20,7 +20,11 @@ const AbstractButton: React.FC<IPropsWithChildren> = (props) => {
       isBackground={props.isBackground}
       backgroundColor={props.backgroundColor}
       hoverBackground={props.hoverBackground}
+      isLiked={props.isLiked}
       onClick={props.onClick}
+      colorClicked={props.colorClicked}
+      backgroundColorClicked={props.backgroundColorClicked}
+      borderRadiusLiked={props.borderRadiusLiked}
     >
       {props.children}
     </AbstractButtonStyle>
@@ -75,4 +79,6 @@ export const AbstractButtonStyle = styled.button<IAbstractButton>`
       : css`
           background-color: none;
         `}
+
+  ${(props) => (props.isLiked === true ? css`` : css``)}
 `;

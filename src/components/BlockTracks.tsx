@@ -161,7 +161,19 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
           </BlockBitStyle>
         </InfoTrackStyle>
       </ContentTrackStyle>
-      <ButtonLike onClick={handlerClickLikedBtn}>
+      <ButtonLike
+        onClick={handlerClickLikedBtn}
+        isLiked={isLiked}
+        padding="15px 10px"
+        fontWeight={variantsFontWeight.BOLD_FW}
+        isBackground={isBackgroundVariants.EXIST_BACKGROUND_COLOR}
+        hoverBackground="#d498b4"
+        backgroundColor="#4f6f8a"
+        borderRadius="12px"
+        colorClicked="#ffffff"
+        backgroundColorClicked="#c45269"
+        borderRadiusLiked="0px 12px 12px 0px"
+      >
         {!isLiked ? "Like" : "Unlike"}
       </ButtonLike>
     </BlockTrackStyle>
