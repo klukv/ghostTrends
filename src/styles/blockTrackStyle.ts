@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FlexContainerALignCenter } from "../const/global";
 
 export const ContentTrackStyle = styled.div`
   flex-grow: 1;
@@ -15,8 +16,7 @@ export const PriceStyle = styled.div`
 `;
 
 export const AuthorTrack = styled.div`
-  display: flex;
-  align-items: center;
+  ${FlexContainerALignCenter}
   margin: 10px 0px 20px 0px;
 `;
 
@@ -25,9 +25,8 @@ export const InfoTrackStyle = styled.div`
 `;
 
 export const AvatarTimeStyle = styled.div`
-  display: flex;
+  ${FlexContainerALignCenter};
   flex-direction: column;
-  align-items: center;
 `;
 export const AvatarBlockStyle = styled.div`
   width: 100px;
@@ -55,27 +54,27 @@ export const InfoBitStyle = styled.div`
 `;
 
 export const BitPropertiesBpmStyle = styled.div`
-  display: flex;
+  ${FlexContainerALignCenter};
 `;
 
 export const BitPropertiesKeyStyle = styled.div`
-  display: flex
+  ${FlexContainerALignCenter};
 `;
 
 export const BitPropertiesDawStyle = styled.div`
-  display: flex;
+  ${FlexContainerALignCenter};
 `;
 
 export const InfoBitGenresStyle = styled.div`
-  display: flex;
+  ${FlexContainerALignCenter};
   grid-column: span 3;
 `;
 
 export const PublishersLabelStyle = styled.div`
-  display: flex;
+  ${FlexContainerALignCenter};
 `;
 
 export const PublishersPLatformStyle = styled.div`
-  display: flex;
+  ${FlexContainerALignCenter};
   grid-column: span 2;
 `;

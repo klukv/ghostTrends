@@ -6,7 +6,7 @@ export interface IAbstractButton {
     fontSize?: string;
     padding?: string;
     fontWeight?: boolean;
-    isBorder?: boolean;
+    isBorder?: string;
     borderSize?: string;
     borderColor?: string;
     borderRadius?: string;

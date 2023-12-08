@@ -1,10 +1,24 @@
-import React from 'react'
-import { IAbstractButton } from '../../const/types'
+import React from "react";
+import { IPropsWithChildren } from "../../const/types";
+import AbstractButton from "../../abstract/Button/AbstractButton";
 
-const ButtonBackground: React.FC<any> = ({children}) => {
+const ButtonBackground: React.FC<IPropsWithChildren> = ({
+  children,
+  isBackground,
+  backgroundColor,
+  borderRadius,
+  fontWeight,
+}) => {
   return (
-    <div>{children}</div>
-  )
-}
+    <AbstractButton
+      isBackground={isBackground}
+      backgroundColor={backgroundColor}
+      borderRadius={borderRadius}
+      fontWeight={fontWeight}
+    >
+      {children}
+    </AbstractButton>
+  );
+};
 
-export default ButtonBackground
+export default ButtonBackground;

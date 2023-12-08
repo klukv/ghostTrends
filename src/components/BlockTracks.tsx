@@ -22,6 +22,7 @@ import {
   PublishersLabelStyle,
   PublishersPLatformStyle,
 } from "../styles/blockTrackStyle";
+import { borderVariants } from "../const/enums";
 
 interface IPropsBlockTracks {
   displayValue: string;
@@ -42,7 +43,7 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
       <ContentTrackStyle>
         <AuthorTrack>
           <ButtonBorder
-            isBorder={true}
+            isBorder={borderVariants.EXIST_BORDER}
             borderSize="2px"
             borderColor="#4f6f8a"
             borderRadius="8px"
@@ -51,7 +52,7 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
           </ButtonBorder>
           <SpanBlock marginValue="mx">by</SpanBlock>
           <ButtonBorder
-            isBorder={true}
+            isBorder={borderVariants.EXIST_BORDER}
             borderSize="2px"
             borderColor="#4f6f8a"
             borderRadius="8px"
@@ -89,7 +90,7 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
             <PublishersLabelStyle>
               <SpanBlock marginValue="right">Label:</SpanBlock>
               <ButtonBorder
-                isBorder={true}
+                isBorder={borderVariants.EXIST_BORDER}
                 borderSize="2px"
                 borderColor="#4f6f8a"
                 borderRadius="8px"
@@ -100,7 +101,7 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
             <PublishersPLatformStyle>
               <SpanBlock marginValue="right">Platform:</SpanBlock>
               <ButtonBorder
-                isBorder={true}
+                isBorder={borderVariants.EXIST_BORDER}
                 borderSize="2px"
                 borderColor="#4f6f8a"
                 borderRadius="8px"

@@ -1,5 +1,9 @@
-export enum variantsButton {
-    BUTTON_BORDERED = 'BUTTON_BORDERED',
-    BUTTON_LIKE = 'BUTTON_LIKE',
-    BUTTON_BACKGROUND = 'BUTTON_BACKGROUND'
+export enum borderRadiusVarinats {
+    EXIST_BORDER_RADIUS = "EXIST_BORDER_RADIUS",
+    NOT_BORDER_RADIUS = "NOT_BORDER_RADIUS",
+}
+
+export enum borderVariants {
+    EXIST_BORDER = "EXIST_BORDER",
+    NOT_BORDER = "NOT_BORDER"
 }
