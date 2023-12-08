@@ -45,12 +45,14 @@ export const InfoTimeStyle = styled.div`
   font-weight: 700;
 `;
 
+export const BlockBitStyle = styled.div`
+  margin: 0px 25px;`
+
 export const InfoBitStyle = styled.div`
   display: grid;
-  grid-template-rows: repeat(3, 30px);
-  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 120px 1fr 280px;
   gap: 15px;
-  margin: 0px 25px;
 `;
 
 export const BitPropertiesBpmStyle = styled.div`
@@ -65,10 +67,22 @@ export const BitPropertiesDawStyle = styled.div`
   ${FlexContainerALignCenter};
 `;
 
-export const InfoBitGenresStyle = styled.div`
-  ${FlexContainerALignCenter};
+export const InfoBlockGenres = styled.div`
+  display: flex;
+  align-items: center;
   grid-column: span 3;
+`
+
+export const InfoBitGenresStyle = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 7px;
 `;
+
+export const BlockPublishersStyle = styled.div`
+  display: flex;
+  margin-top: 15px;
+`
 
 export const PublishersLabelStyle = styled.div`
   ${FlexContainerALignCenter};
@@ -76,5 +90,6 @@ export const PublishersLabelStyle = styled.div`
 
 export const PublishersPLatformStyle = styled.div`
   ${FlexContainerALignCenter};
+  margin-left: 20px;
   grid-column: span 2;
 `;

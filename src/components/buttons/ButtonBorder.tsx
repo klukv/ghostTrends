@@ -11,7 +11,7 @@ const ButtonBorder: React.FC<IPropsWithChildren> = ({
 }) => {
   return (
     <AbstractButton
-      isBorder= {isBorder}
+      isBorder={isBorder}
       borderSize={borderSize}
       borderColor={borderColor}
       borderRadius={borderRadius}

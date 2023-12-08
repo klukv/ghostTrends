@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from "react";
 
-function ButtonLike() {
-  return (
-    <div>ButtonLike</div>
-  )
-}
+import { IPropsButtonLike } from "../../const/types";
 
-export default ButtonLike
+import AbstractButton from "../../abstract/Button/AbstractButton";
+
+const ButtonLike: React.FC<IPropsButtonLike> = ({ children, onClick }) => {
+  return <AbstractButton onClick={onClick}>{children}</AbstractButton>;
+};
+
+export default ButtonLike;

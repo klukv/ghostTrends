@@ -1,21 +1,29 @@
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 // Buttons types
 
 export interface IAbstractButton {
     fontSize?: string;
     padding?: string;
-    fontWeight?: boolean;
+    fontWeight?: string;
     isBorder?: string;
     borderSize?: string;
     borderColor?: string;
     borderRadius?: string;
-    isBackground?: boolean;
+    isBackground?: string;
     backgroundColor?: string;
+    hoverBackground?: string;
+    onClick?: MouseEventHandler<HTMLButtonElement>;
+    backgroundColorClicked?: string;
 }
 
 export interface IPropsWithChildren extends IAbstractButton {
     children: ReactNode;
+}
+
+export interface IPropsButtonLike extends IAbstractButton {
+    children: ReactNode;
+    onClick: () => void;
 }
 
 //BLockTrack types

@@ -28,9 +28,9 @@ const Header = () => {
 export default Header;
 
 const HeaderC = styled.header`
-  background-color:  #000d1a;
+  background-color: #000d1a;
   font-size: 16px;
-`
+`;
 
 const HeaderInner = styled.div`
   display: flex;
@@ -39,8 +39,8 @@ const HeaderInner = styled.div`
 `;
 
 const Logo = styled.div`
-  font-size: 14px;
-  color: red;
+  font-size: 22px;
+  color: #ffffff;
 `;
 
 const Navigation = styled.nav`

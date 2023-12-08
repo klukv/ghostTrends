@@ -1,7 +1,12 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { IAbstractButton, IPropsWithChildren } from "../../const/types";
-import { borderRadiusVarinats, borderVariants } from "../../const/enums";
+import {
+  isBackgroundVariants,
+  isBorderRadiusVarinats,
+  isBorderVariants,
+  variantsFontWeight,
+} from "../../const/enums";
 
 const AbstractButton: React.FC<IPropsWithChildren> = (props) => {
   return (
@@ -14,6 +19,8 @@ const AbstractButton: React.FC<IPropsWithChildren> = (props) => {
       borderRadius={props.borderRadius}
       isBackground={props.isBackground}
       backgroundColor={props.backgroundColor}
+      hoverBackground={props.hoverBackground}
+      onClick={props.onClick}
     >
       {props.children}
     </AbstractButtonStyle>
@@ -25,17 +32,21 @@ export default AbstractButton;
 export const AbstractButtonStyle = styled.button<IAbstractButton>`
   font-size: ${(props) => props.fontSize || "inherit"};
   padding: ${(props) => props.padding || "5px 10px"};
-  font-weight: ${(props) => (props.fontWeight === true ? 700 : 400)};
+  font-weight: ${(props) =>
+    props.fontWeight !== variantsFontWeight.DEFAULT_FW
+      ? props.fontWeight
+      : variantsFontWeight.DEFAULT_FW};
   border-radius: ${(props) =>
-    props.borderRadius !== borderRadiusVarinats.NOT_BORDER_RADIUS
+    props.borderRadius !== isBorderRadiusVarinats.NOT_BORDER_RADIUS
       ? props.borderRadius
       : css`
           border-radius: none;
         `};
 
   ${(props) =>
-    props.isBorder === borderVariants.EXIST_BORDER
+    props.isBorder === isBorderVariants.EXIST_BORDER
       ? css`
+          white-space: nowrap;
           border: ${props.borderSize} solid transparent;
           border-radius: 0px;
           border-bottom: ${props.borderSize} solid ${props.borderColor};
@@ -50,10 +61,16 @@ export const AbstractButtonStyle = styled.button<IAbstractButton>`
         `};
 
   ${(props) =>
-    props.isBackground === true
+    props.isBackground === isBackgroundVariants.EXIST_BACKGROUND_COLOR
       ? css`
-          background-color: ${props.backgroundColor};
-          border-radius: ${props.borderRadius};
+          white-space: nowrap;
+          margin: 0px 5px;
+          background-color: ${props.backgroundColor || "#b4c3d0"};
+          border-radius: ${props.borderRadius || "5px"};
+          transition: all 0.3s ease-in;
+          &:hover {
+            background-color: ${props.hoverBackground || "#4f6f8a"};
+          }
         `
       : css`
           background-color: none;
