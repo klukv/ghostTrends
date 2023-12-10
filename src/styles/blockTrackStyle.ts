@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FlexContainerALignCenter } from "../const/global";
+import { ISpecialFont } from "../const/types";
 
 export const ContentTrackStyle = styled.div`
   flex-grow: 1;
@@ -8,7 +9,8 @@ export const ContentTrackStyle = styled.div`
   flex-direction: column;
 `;
 
-export const PriceStyle = styled.div`
+export const PriceStyle = styled.div<ISpecialFont>`
+  font-family: ${(props) => props.fontFamily}, Courier, monospace;
   font-weight: 700;
   font-size: 18px;
   max-width: 80px;
@@ -40,17 +42,19 @@ export const ImageAvatar = styled.img`
   height: 100%;
 `;
 
-export const InfoTimeStyle = styled.div`
+export const InfoTimeStyle = styled.div<ISpecialFont>`
+  font-family: ${(props) => props.fontFamily} Courier, monospace;
   margin-top: 7px;
   font-weight: 700;
 `;
 
 export const BlockBitStyle = styled.div`
-  margin: 0px 25px;`
+  margin: 0px 25px;
+`;
 
 export const InfoBitStyle = styled.div`
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 25px 1fr;
   grid-template-columns: 120px 1fr 280px;
   gap: 15px;
 `;
@@ -71,7 +75,7 @@ export const InfoBlockGenres = styled.div`
   display: flex;
   align-items: center;
   grid-column: span 3;
-`
+`;
 
 export const InfoBitGenresStyle = styled.div`
   display: grid;
@@ -82,7 +86,7 @@ export const InfoBitGenresStyle = styled.div`
 export const BlockPublishersStyle = styled.div`
   display: flex;
   margin-top: 15px;
-`
+`;
 
 export const PublishersLabelStyle = styled.div`
   ${FlexContainerALignCenter};
@@ -92,4 +96,9 @@ export const PublishersPLatformStyle = styled.div`
   ${FlexContainerALignCenter};
   margin-left: 20px;
   grid-column: span 2;
+`;
+export const BlockButtonLike = styled.div`
+  width: 100px;
+  display: flex;
+  justify-content: end;
 `;

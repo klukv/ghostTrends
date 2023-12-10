@@ -6,18 +6,27 @@ export interface IAbstractButton {
   fontSize?: string;
   padding?: string;
   fontWeight?: string;
+  //пропсы для кнопки с border
   isBorder?: string;
   borderSize?: string;
   borderColor?: string;
   borderRadius?: string;
+  //пропсы для кнопки с background-color
   isBackground?: string;
   backgroundColor?: string;
   hoverBackground?: string;
+  //пропсы для кнопки лайка
   isLiked?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  colorClicked?: string;
-  backgroundColorClicked?: string;
+  colorLiked?: string;
+  backgroundColorLiked?: string;
   borderRadiusLiked?: string;
+  positionTopStart?: string;
+  positionBottomStart?: string;
+  positionRightStart?: string;
+  positionTopEnd?: string;
+  positionBottomEnd?: string;
+  positionRightEnd?: string;
 }
 
 export interface IPropsWithChildren extends IAbstractButton {
@@ -64,10 +73,9 @@ export interface ISpanBlock {
   marginValue: string;
 }
 
-//animations
+// Div types 
 
-export interface IPropsAnimationLikeBtn {
-  borderRadiusLiked: string;
-  backgroundColorLiked: string;
-  colorLiked: string;
+export interface ISpecialFont {
+  fontFamily: string;
 }
+

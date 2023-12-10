@@ -14,9 +14,15 @@ const ButtonLike: React.FC<IPropsButtonLike> = ({
   hoverBackground,
   backgroundColor,
   borderRadius,
-  colorClicked,
-  backgroundColorClicked,
+  colorLiked,
+  backgroundColorLiked,
   borderRadiusLiked,
+  positionTopStart,
+  positionBottomStart,
+  positionRightStart,
+  positionTopEnd,
+  positionBottomEnd,
+  positionRightEnd,
 }) => {
   return (
     <AbstractButton
@@ -28,9 +34,15 @@ const ButtonLike: React.FC<IPropsButtonLike> = ({
       hoverBackground={hoverBackground}
       backgroundColor={backgroundColor}
       borderRadius={borderRadius}
-      colorClicked={colorClicked}
-      backgroundColorClicked={backgroundColorClicked}
+      colorLiked={colorLiked}
+      backgroundColorLiked={backgroundColorLiked}
       borderRadiusLiked={borderRadiusLiked}
+      positionTopStart={positionTopStart}
+      positionBottomStart={positionBottomStart}
+      positionRightStart={positionRightStart}
+      positionTopEnd={positionTopEnd}
+      positionBottomEnd={positionBottomEnd}
+      positionRightEnd={positionRightEnd}
     >
       {children}
     </AbstractButton>

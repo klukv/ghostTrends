@@ -7,6 +7,7 @@ import {
   isBorderVariants,
   variantsFontWeight,
 } from "../../const/enums";
+import { animateToLike, animateToUnlike } from "../../const/animations";
 
 const AbstractButton: React.FC<IPropsWithChildren> = (props) => {
   return (
@@ -22,9 +23,15 @@ const AbstractButton: React.FC<IPropsWithChildren> = (props) => {
       hoverBackground={props.hoverBackground}
       isLiked={props.isLiked}
       onClick={props.onClick}
-      colorClicked={props.colorClicked}
-      backgroundColorClicked={props.backgroundColorClicked}
+      colorLiked={props.colorLiked}
+      backgroundColorLiked={props.backgroundColorLiked}
       borderRadiusLiked={props.borderRadiusLiked}
+      positionTopStart={props.positionTopStart}
+      positionBottomStart={props.positionBottomStart}
+      positionRightStart={props.positionRightStart}
+      positionTopEnd={props.positionTopEnd}
+      positionBottomEnd={props.positionBottomEnd}
+      positionRightEnd={props.positionRightEnd}
     >
       {props.children}
     </AbstractButtonStyle>
@@ -80,5 +87,38 @@ export const AbstractButtonStyle = styled.button<IAbstractButton>`
           background-color: none;
         `}
 
-  ${(props) => (props.isLiked === true ? css`` : css``)}
+  ${(props) =>
+    props.isLiked === true
+      ? css`
+          animation: ${animateToLike(
+              props.borderRadius,
+              props.borderRadiusLiked,
+              props.backgroundColorLiked,
+              props.hoverBackground,
+              props.colorLiked,
+              props.positionTopStart,
+              props.positionBottomStart,
+              props.positionRightStart,
+              props.positionTopEnd,
+              props.positionBottomEnd,
+              props.positionRightEnd
+            )}
+            0.2s linear forwards;
+        `
+      : css`
+          animation: ${animateToUnlike(
+              props.borderRadius,
+              props.borderRadiusLiked,
+              props.backgroundColorLiked,
+              props.hoverBackground,
+              props.colorLiked,
+              props.positionTopStart,
+              props.positionBottomStart,
+              props.positionRightStart,
+              props.positionTopEnd,
+              props.positionBottomEnd,
+              props.positionRightEnd
+            )}
+            0.2s linear;
+        `}
 `;

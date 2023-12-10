@@ -4,6 +4,9 @@ import { ISpanBlock } from "./types";
 //общие стили
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+      height: 100%;
+}
   *, *::after, *::before {
   box-sizing: border-box;
   margin: 0;
@@ -28,6 +31,7 @@ export const GlobalStyle = createGlobalStyle`
     /* отображаем курсор в виде руки при наведении; некоторые
     считают, что необходимо оставлять стрелочный вид для кнопок */
     cursor: pointer;
+    outline: none;
   }
 `;
 
@@ -48,15 +52,14 @@ export const SpanBlock = styled.div<ISpanBlock>`
 export const FlexContainerALignCenter = css`
   display: flex;
   align-items: center;
-`
+`;
 
 export const FlexContainerJustifyCenter = css`
   display: flex;
   justify-content: center;
-`
+`;
 export const FlexConteinerCenter = css`
   display: flex;
   justify-content: center;
   align-items: center;
-`
-
+`;

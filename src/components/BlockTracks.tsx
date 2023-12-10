@@ -13,6 +13,7 @@ import {
   BitPropertiesDawStyle,
   BitPropertiesKeyStyle,
   BlockBitStyle,
+  BlockButtonLike,
   BlockPublishersStyle,
   ContentTrackStyle,
   ImageAvatar,
@@ -51,7 +52,7 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
       backgroundColor={props.backgroundColorValue}
     >
       {/* Todo: сделать другой шрифт */}
-      <PriceStyle>
+      <PriceStyle fontFamily="Courier New">
         {props.dataTrack.price} {props.dataTrack.currency} On sale
       </PriceStyle>
       <ContentTrackStyle>
@@ -79,7 +80,7 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
             <AvatarBlockStyle>
               <ImageAvatar src={props.dataTrack.coverImage} alt="niceImage" />
             </AvatarBlockStyle>
-            <InfoTimeStyle>03:11</InfoTimeStyle>
+            <InfoTimeStyle fontFamily="Courier New">03:11</InfoTimeStyle>
           </AvatarTimeStyle>
           <BlockBitStyle>
             <InfoBitStyle>
@@ -161,21 +162,29 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
           </BlockBitStyle>
         </InfoTrackStyle>
       </ContentTrackStyle>
-      <ButtonLike
-        onClick={handlerClickLikedBtn}
-        isLiked={isLiked}
-        padding="15px 10px"
-        fontWeight={variantsFontWeight.BOLD_FW}
-        isBackground={isBackgroundVariants.EXIST_BACKGROUND_COLOR}
-        hoverBackground="#d498b4"
-        backgroundColor="#4f6f8a"
-        borderRadius="12px"
-        colorClicked="#ffffff"
-        backgroundColorClicked="#c45269"
-        borderRadiusLiked="0px 12px 12px 0px"
-      >
-        {!isLiked ? "Like" : "Unlike"}
-      </ButtonLike>
+      <BlockButtonLike>
+        <ButtonLike
+          onClick={handlerClickLikedBtn}
+          isLiked={isLiked}
+          padding="15px 10px"
+          fontWeight={variantsFontWeight.BOLD_FW}
+          isBackground={isBackgroundVariants.EXIST_BACKGROUND_COLOR}
+          hoverBackground="#d498b4"
+          backgroundColor="#4f6f8a"
+          borderRadius="12px"
+          colorLiked="#ffffff"
+          backgroundColorLiked="#c45269"
+          borderRadiusLiked="0px 12px 12px 0px"
+          positionTopStart="85px"
+          positionBottomStart="85px"
+          positionRightStart="15px"
+          positionTopEnd="0px"
+          positionBottomEnd="0px"
+          positionRightEnd="-5px"
+        >
+          {!isLiked ? "Like" : "Unlike"}
+        </ButtonLike>
+      </BlockButtonLike>
     </BlockTrackStyle>
   );
 };
@@ -187,8 +196,9 @@ const BlockTrackStyle = styled.div<IBlockTrack>`
   align-items: center;
   color: #000;
   border-radius: 8px;
-  padding: 15px;
+  padding: 15px 15px;
   margin-bottom: 15px;
+  position: relative;
 
   display: ${(props) => props.display};
   background: linear-gradient(
