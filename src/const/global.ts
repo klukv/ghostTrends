@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle, css } from "styled-components";
-import { ISpanBlock } from "./types";
+import { IButtonLikeStyled, ISpanBlock } from "./types";
 
 //общие стили
 
@@ -28,8 +28,6 @@ export const GlobalStyle = createGlobalStyle`
     font: inherit;
     color: inherit;
     background-color: transparent;
-    /* отображаем курсор в виде руки при наведении; некоторые
-    считают, что необходимо оставлять стрелочный вид для кнопок */
     cursor: pointer;
     outline: none;
   }
@@ -63,3 +61,37 @@ export const FlexConteinerCenter = css`
   justify-content: center;
   align-items: center;
 `;
+
+export const setValuePosition = (isLiked: boolean): IButtonLikeStyled => {
+  if (isLiked)
+    return {
+      min_width: "60px",
+      height: "100%",
+      margin: "-15px",
+    };
+  return {
+    min_width: "60px",
+    height: "auto",
+    margin: "0px",
+  };
+};
+
+export const defaultBtnPadding = () => "5px 10px";
+
+export const likeBtnPadding = () => "15px 0px";
+
+export const defaultBorderRadius = () => "12px";
+
+export const likeBtnActiveBorderRadius = () => "0px 12px 12px 0px";
+
+// константы color и bg-color
+
+export const defaultBtnColor = () => "#000";
+
+export const likeBtnActiveColor = () => "#ffffff";
+
+export const defaultBgColor = () => "#4f6f8a";
+
+export const likeBtnHoverBgColor = () => "#d498b4";
+
+export const likeBtnActiveBgColor = () => "#c45269";

@@ -1,11 +1,17 @@
 import { MouseEventHandler, ReactNode } from "react";
+import { CSSProperties } from "styled-components";
 
 // Buttons types
 
-export interface IAbstractButton {
+export interface IBasicStyles {
   fontSize?: string;
+  color?: string;
   padding?: string;
   fontWeight?: string;
+}
+
+export interface IAbstractButton {
+  styleBase?: IBasicStyles;
   //пропсы для кнопки с border
   isBorder?: string;
   borderSize?: string;
@@ -15,27 +21,25 @@ export interface IAbstractButton {
   isBackground?: string;
   backgroundColor?: string;
   hoverBackground?: string;
-  //пропсы для кнопки лайка
-  isLiked?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  colorLiked?: string;
-  backgroundColorLiked?: string;
-  borderRadiusLiked?: string;
-  positionTopStart?: string;
-  positionBottomStart?: string;
-  positionRightStart?: string;
-  positionTopEnd?: string;
-  positionBottomEnd?: string;
-  positionRightEnd?: string;
+  //пропсы для кнопки лайка
+  stylesLikeBtn?: IButtonLikeStyled;
 }
 
 export interface IPropsWithChildren extends IAbstractButton {
   children: ReactNode;
 }
 
-export interface IPropsButtonLike extends IAbstractButton {
+export interface IPropsButtonLike extends IBasicStyles {
   children: ReactNode;
+  isLiked: boolean;
   onClick: () => void;
+}
+
+export interface IButtonLikeStyled {
+  min_width?: string;
+  height: string;
+  margin: string;
 }
 
 //BLockTrack types
@@ -73,9 +77,8 @@ export interface ISpanBlock {
   marginValue: string;
 }
 
-// Div types 
+// Div types
 
 export interface ISpecialFont {
   fontFamily: string;
 }
-

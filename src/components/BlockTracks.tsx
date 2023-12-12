@@ -4,7 +4,7 @@ import { IBlockTrack, ITrackData } from "../const/types";
 import ButtonLike from "./buttons/ButtonLike";
 import ButtonBorder from "./buttons/ButtonBorder";
 import ButtonBackground from "./buttons/ButtonBackground";
-import { SpanBlock } from "../const/global";
+import { SpanBlock, defaultBtnPadding, likeBtnPadding } from "../const/global";
 import {
   AuthorTrack,
   AvatarBlockStyle,
@@ -87,9 +87,11 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
               <BitPropertiesBpmStyle>
                 <SpanBlock marginValue="right">BPM:</SpanBlock>
                 <ButtonBackground
-                  padding="5px 20px"
+                  styleBase={{
+                    padding: defaultBtnPadding(),
+                    fontWeight: variantsFontWeight.BOLD_FW,
+                  }}
                   isBackground={isBackgroundVariants.EXIST_BACKGROUND_COLOR}
-                  fontWeight={variantsFontWeight.BOLD_FW}
                   hoverBackground="#4f6f8a"
                 >
                   {props.dataTrack.bpm}
@@ -98,9 +100,11 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
               <BitPropertiesKeyStyle>
                 <SpanBlock marginValue="right">Key:</SpanBlock>
                 <ButtonBackground
-                  padding="5px 20px"
+                  styleBase={{
+                    padding: defaultBtnPadding(),
+                    fontWeight: variantsFontWeight.BOLD_FW,
+                  }}
                   isBackground={isBackgroundVariants.EXIST_BACKGROUND_COLOR}
-                  fontWeight={variantsFontWeight.BOLD_FW}
                   hoverBackground="#4f6f8a"
                 >
                   {props.dataTrack.key_}
@@ -109,9 +113,11 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
               <BitPropertiesDawStyle>
                 <SpanBlock marginValue="right">DAW:</SpanBlock>
                 <ButtonBackground
-                  padding="5px 20px"
+                  styleBase={{
+                    padding: defaultBtnPadding(),
+                    fontWeight: variantsFontWeight.BOLD_FW,
+                  }}
                   isBackground={isBackgroundVariants.EXIST_BACKGROUND_COLOR}
-                  fontWeight={variantsFontWeight.BOLD_FW}
                   hoverBackground="#4f6f8a"
                 >
                   {props.dataTrack.daw}
@@ -124,9 +130,11 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
                   {props.dataTrack.genres.map((genre, index) => (
                     <ButtonBackground
                       key={index}
-                      padding="5px 20px"
+                      styleBase={{
+                        padding: defaultBtnPadding(),
+                        fontWeight: variantsFontWeight.BOLD_FW,
+                      }}
                       isBackground={isBackgroundVariants.EXIST_BACKGROUND_COLOR}
-                      fontWeight={variantsFontWeight.BOLD_FW}
                       hoverBackground="#4f6f8a"
                     >
                       {genre}
@@ -164,23 +172,10 @@ const BlockTracks: React.FC<IPropsBlockTracks> = (props) => {
       </ContentTrackStyle>
       <BlockButtonLike>
         <ButtonLike
+          padding={likeBtnPadding()}
           onClick={handlerClickLikedBtn}
           isLiked={isLiked}
-          padding="15px 10px"
           fontWeight={variantsFontWeight.BOLD_FW}
-          isBackground={isBackgroundVariants.EXIST_BACKGROUND_COLOR}
-          hoverBackground="#d498b4"
-          backgroundColor="#4f6f8a"
-          borderRadius="12px"
-          colorLiked="#ffffff"
-          backgroundColorLiked="#c45269"
-          borderRadiusLiked="0px 12px 12px 0px"
-          positionTopStart="85px"
-          positionBottomStart="85px"
-          positionRightStart="15px"
-          positionTopEnd="0px"
-          positionBottomEnd="0px"
-          positionRightEnd="-5px"
         >
           {!isLiked ? "Like" : "Unlike"}
         </ButtonLike>
@@ -196,8 +191,10 @@ const BlockTrackStyle = styled.div<IBlockTrack>`
   align-items: center;
   color: #000;
   border-radius: 8px;
-  padding: 15px 15px;
+  padding: 15px;
   margin-bottom: 15px;
+  height: 1px;
+  min-height: 220px;
   position: relative;
 
   display: ${(props) => props.display};

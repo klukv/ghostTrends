@@ -99,6 +99,8 @@ export const PublishersPLatformStyle = styled.div`
 `;
 export const BlockButtonLike = styled.div`
   width: 100px;
+  height: 100%;
   display: flex;
   justify-content: end;
+  align-items: center;
 `;

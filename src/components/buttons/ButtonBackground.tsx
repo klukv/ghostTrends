@@ -4,20 +4,21 @@ import AbstractButton from "../../abstract/Button/AbstractButton";
 
 const ButtonBackground: React.FC<IPropsWithChildren> = ({
   children,
-  padding,
+  styleBase,
   isBackground,
   backgroundColor,
   borderRadius,
-  fontWeight,
   hoverBackground,
 }) => {
   return (
     <AbstractButton
-      padding={padding}
+      styleBase={{
+        padding: styleBase?.padding,
+        fontWeight: styleBase?.fontWeight,
+      }}
       isBackground={isBackground}
       backgroundColor={backgroundColor}
       borderRadius={borderRadius}
-      fontWeight={fontWeight}
       hoverBackground={hoverBackground}
     >
       {children}

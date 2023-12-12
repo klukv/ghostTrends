@@ -7,13 +7,17 @@ import {
   isBorderVariants,
   variantsFontWeight,
 } from "../../const/enums";
-import { animateToLike, animateToUnlike } from "../../const/animations";
+import { defaultBgColor } from "../../const/global";
 
 const AbstractButton: React.FC<IPropsWithChildren> = (props) => {
   return (
     <AbstractButtonStyle
-      padding={props.padding}
-      fontWeight={props.fontWeight}
+      styleBase={{
+        fontSize: props.styleBase?.fontSize,
+        color: props.styleBase?.color,
+        padding: props.styleBase?.padding,
+        fontWeight: props.styleBase?.fontWeight,
+      }}
       isBorder={props.isBorder}
       borderSize={props.borderSize}
       borderColor={props.borderColor}
@@ -21,17 +25,8 @@ const AbstractButton: React.FC<IPropsWithChildren> = (props) => {
       isBackground={props.isBackground}
       backgroundColor={props.backgroundColor}
       hoverBackground={props.hoverBackground}
-      isLiked={props.isLiked}
       onClick={props.onClick}
-      colorLiked={props.colorLiked}
-      backgroundColorLiked={props.backgroundColorLiked}
-      borderRadiusLiked={props.borderRadiusLiked}
-      positionTopStart={props.positionTopStart}
-      positionBottomStart={props.positionBottomStart}
-      positionRightStart={props.positionRightStart}
-      positionTopEnd={props.positionTopEnd}
-      positionBottomEnd={props.positionBottomEnd}
-      positionRightEnd={props.positionRightEnd}
+      stylesLikeBtn={props.stylesLikeBtn}
     >
       {props.children}
     </AbstractButtonStyle>
@@ -41,11 +36,12 @@ const AbstractButton: React.FC<IPropsWithChildren> = (props) => {
 export default AbstractButton;
 
 export const AbstractButtonStyle = styled.button<IAbstractButton>`
-  font-size: ${(props) => props.fontSize || "inherit"};
-  padding: ${(props) => props.padding || "5px 10px"};
+  color: ${(props) => props.styleBase?.color ?? "#000"};
+  font-size: ${(props) => props.styleBase?.fontSize ?? "inherit"};
+  padding: ${(props) => props.styleBase?.padding ?? "5px 10px"};
   font-weight: ${(props) =>
-    props.fontWeight !== variantsFontWeight.DEFAULT_FW
-      ? props.fontWeight
+    props.styleBase?.fontWeight !== variantsFontWeight.DEFAULT_FW
+      ? props.styleBase?.fontWeight
       : variantsFontWeight.DEFAULT_FW};
   border-radius: ${(props) =>
     props.borderRadius !== isBorderRadiusVarinats.NOT_BORDER_RADIUS
@@ -76,11 +72,11 @@ export const AbstractButtonStyle = styled.button<IAbstractButton>`
       ? css`
           white-space: nowrap;
           margin: 0px 5px;
-          background-color: ${props.backgroundColor || "#b4c3d0"};
-          border-radius: ${props.borderRadius || "5px"};
+          background-color: ${props.backgroundColor ?? "#b4c3d0"};
+          border-radius: ${props.borderRadius ?? "5px"};
           transition: all 0.3s ease-in;
           &:hover {
-            background-color: ${props.hoverBackground || "#4f6f8a"};
+            background-color: ${props.hoverBackground ?? defaultBgColor()};
           }
         `
       : css`
@@ -88,37 +84,11 @@ export const AbstractButtonStyle = styled.button<IAbstractButton>`
         `}
 
   ${(props) =>
-    props.isLiked === true
-      ? css`
-          animation: ${animateToLike(
-              props.borderRadius,
-              props.borderRadiusLiked,
-              props.backgroundColorLiked,
-              props.hoverBackground,
-              props.colorLiked,
-              props.positionTopStart,
-              props.positionBottomStart,
-              props.positionRightStart,
-              props.positionTopEnd,
-              props.positionBottomEnd,
-              props.positionRightEnd
-            )}
-            0.2s linear forwards;
-        `
-      : css`
-          animation: ${animateToUnlike(
-              props.borderRadius,
-              props.borderRadiusLiked,
-              props.backgroundColorLiked,
-              props.hoverBackground,
-              props.colorLiked,
-              props.positionTopStart,
-              props.positionBottomStart,
-              props.positionRightStart,
-              props.positionTopEnd,
-              props.positionBottomEnd,
-              props.positionRightEnd
-            )}
-            0.2s linear;
-        `}
+    props.stylesLikeBtn &&
+    css`
+      min-width: ${props.stylesLikeBtn.min_width};
+      transition: all 0.2s ease-in;
+      height: ${props.stylesLikeBtn.height};
+      margin: ${props.stylesLikeBtn.margin};
+    `}
 `;
