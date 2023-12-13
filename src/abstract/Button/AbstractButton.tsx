@@ -89,7 +89,6 @@ export const AbstractButtonStyle = styled.button<IAbstractButton>`
       min-width: ${props.stylesLikeBtn.min_width};
       transition: all 0.2s ease-in;
       height: ${props.stylesLikeBtn.height};
-      /* height: ${props.stylesLikeBtn.height}; */
       margin: ${props.stylesLikeBtn.margin};
     `}
 `;
