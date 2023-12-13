@@ -34,7 +34,7 @@ const ButtonLike: React.FC<IPropsButtonLike> = ({
       borderRadius={
         isLiked ? likeBtnActiveBorderRadius() : defaultBorderRadius()
       }
-      hoverBackground={likeBtnHoverBgColor()}
+      hoverBackground={isLiked ? likeBtnActiveBgColor() : likeBtnHoverBgColor()}
       stylesLikeBtn={setValuePosition(isLiked)}
     >
       {children}
