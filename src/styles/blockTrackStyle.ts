@@ -2,11 +2,9 @@ import styled from "styled-components";
 import { FlexContainerALignCenter } from "../const/global";
 import { ISpecialFont } from "../const/types";
 
-export const ContentTrackStyle = styled.div`
-  flex-grow: 1;
-  margin: 0px 15px;
-  display: flex;
-  flex-direction: column;
+export const BlockTrackInfoInnerStyle = styled.div`
+  ${FlexContainerALignCenter};
+  padding: 15px;
 `;
 
 export const PriceStyle = styled.div<ISpecialFont>`
@@ -15,6 +13,13 @@ export const PriceStyle = styled.div<ISpecialFont>`
   font-size: 18px;
   max-width: 80px;
   text-align: center;
+`;
+
+export const ContentTrackStyle = styled.div`
+  flex-grow: 1;
+  margin: 0px 15px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const AuthorTrack = styled.div`
@@ -96,11 +101,4 @@ export const PublishersPLatformStyle = styled.div`
   ${FlexContainerALignCenter};
   margin-left: 20px;
   grid-column: span 2;
-`;
-export const BlockButtonLike = styled.div`
-  width: 100px;
-  height: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
 `;

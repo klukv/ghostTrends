@@ -67,12 +67,12 @@ export const setValuePosition = (isLiked: boolean): IButtonLikeStyled => {
     return {
       min_width: "60px",
       height: "100%",
-      margin: "-15px",
+      margin: "0px",
     };
   return {
     min_width: "60px",
-    height: "auto",
-    margin: "0px",
+    height: "50px",
+    margin: "15px",
   };
 };
 
